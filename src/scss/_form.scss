@@ -1,0 +1,224 @@
+.form {
+    position: relative;
+    background-color: var(--primary);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+    > :not(:first-child, :last-child, :nth-last-child(2)) {
+        margin-bottom: 20px;
+    }
+
+    > :nth-last-child(1) {
+        margin-top: 20px;
+    }
+
+    border-radius: 12px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(112, 111, 112, 1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(112, 111, 112, 1);
+    box-shadow: 10px 10px 5px 0px rgba(112, 111, 112, 1);
+
+    &__body {
+        display: flex;
+        overflow: hidden;
+    }
+
+    &__column-one {
+        flex: 1 0 100%;
+        transition: transform 0.3s;
+        &--transform {
+            transform: translateX(-100%);
+        }
+    }
+
+    &__column-two {
+        flex: 1 0 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s;
+        &--transform {
+            transform: translateX(-100%);
+        }
+    }
+
+    &__title {
+        margin: 0 0 30px 0;
+        text-align: center;
+        font-size: 40px;
+        color: var(--submit-red);
+        text-shadow: 3px 3px 2px rgba(128, 115, 122, 1);
+    }
+
+    &__control {
+        display: flex;
+        flex-direction: column;
+
+        > :not(:last-child) {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        label {
+            margin-left: 4px;
+        }
+    }
+
+    &__label {
+        color: var(--text-form);
+    }
+
+    &__input {
+        padding: 20px 10px;
+        border-color: transparent;
+        border-bottom: 2px solid var(--text-form);
+
+        &--error {
+            border-bottom: 2px solid var(--danger);
+        }
+
+        &--success {
+            border-bottom: 2px solid green;
+        }
+    }
+
+    &__span {
+        font-size: 12px;
+        margin: 0 0 0 4px;
+        opacity: 0;
+
+        &--error {
+            transition: all 0.4s;
+            color: var(--danger);
+            opacity: 1;
+        }
+    }
+
+    &__submit {
+        text-align: center;
+        width: 95%;
+        align-self: center;
+        margin-top: 50px;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        padding: 15px 10px;
+        cursor: pointer;
+        min-height: 50px;
+        text-align: center;
+        width: 100%;
+        color: var(--primary);
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: 1;
+        margin-top: 10px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--submit-blue);
+            z-index: -1;
+            mix-blend-mode: multiply;
+            transition: transform 0.2s;
+        }
+
+        &:hover::before {
+            top: -6px;
+            left: 0;
+            transform: perspective(1000px) rotateX(75deg);
+            transform-origin: top;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--submit-red);
+            z-index: -1;
+            mix-blend-mode: multiply;
+            transition: all 0.2s;
+        }
+
+        &:hover::after {
+            top: 6px;
+            left: 0px;
+            transform: perspective(1000px) rotateX(-75deg);
+            transform-origin: bottom;
+        }
+
+        &:hover {
+            color: var(--text-form);
+            font-weight: 700;
+        }
+    }
+
+    &__turn-over {
+        align-self: center;
+        .form__ajast {
+            background-color: rgba(112, 111, 112, 0.4);
+            border: none;
+            border-radius: 50px;
+            width: 15px;
+            height: 15px;
+            &--active {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+
+    @include mediaHeight(86rem) {
+        padding: 20px;
+
+        > :not(:first-child, :last-child, :nth-last-child(2)) {
+            margin-bottom: 15px;
+        }
+
+        &__title {
+            margin: 0 0 20px 0;
+            font-size: 30px;
+        }
+
+        &__input {
+            padding: 15px 10px;
+        }
+
+        &__button {
+            font-size: 20px;
+            padding: 10px;
+        }
+    }
+
+    @include mediaHeight($break-point-sm) {
+        padding: 15px;
+
+        > :not(:first-child, :last-child, :nth-last-child(2)) {
+            margin-bottom: 10px;
+        }
+
+        &__title {
+            margin-top: 10px;
+        }
+
+        &__input {
+            padding: 10px;
+        }
+
+        &__button {
+            font-size: 17px;
+            padding: 5px;
+        }
+    }
+}

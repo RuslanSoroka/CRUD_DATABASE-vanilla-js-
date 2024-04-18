@@ -1,0 +1,23 @@
+@mixin mediaWidth($break-point) {
+    @media (max-width: $break-point) {
+        @content;
+    }
+}
+
+@mixin mediaWidthMobileFirst($break-point) {
+    @media (min-width: $break-point) {
+        @content;
+    }
+}
+
+@mixin mediaHeight($break-point2) {
+    @media (max-height: $break-point2) {
+        @content;
+    }
+}
+
+@mixin mediaHeightMobileFirst($break-point2) {
+    @media (min-height: $break-point2) {
+        @content;
+    }
+}

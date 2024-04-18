@@ -1,0 +1,151 @@
+.table {
+    background-color: rgba(110, 108, 108, 0.5);
+    color: var(--primary);
+    position: relative;
+
+    th,
+    td {
+        padding: 1rem;
+        text-align: left;
+    }
+
+    th {
+        background-color: rgba(255, 37, 88, 0.9);
+    }
+
+    tr:nth-of-type(even) {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    &__body-column-btns {
+        display: flex;
+
+        > :not(:last-child) {
+            margin: 0 1rem 0 0;
+        }
+    }
+
+    &__header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    &__button {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        color: var(--primary);
+        cursor: pointer;
+        border: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px;
+        z-index: 200;
+        position: relative;
+        transition: transform 0.2s;
+
+        &--red {
+            background-color: var(--submit-red);
+        }
+
+        &--blue {
+            background-color: var(--submit-blue);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 14px;
+            height: 14px;
+            border-top: 2px solid var(--primary);
+            border-left: 2px solid var(--primary);
+            transition: all 0.2s;
+            z-index: -1;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 14px;
+            height: 14px;
+            border-bottom: 2px solid var(--primary);
+            border-right: 2px solid var(--primary);
+            transition: all 0.2s;
+            z-index: -1;
+        }
+    }
+
+    @include mediaWidthMobileFirst(992px) {
+        &__button {
+            &:active {
+                transform: scale(0.9);
+            }
+
+            &:hover::before,
+            &:hover::after {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    @include mediaWidth(992px) {
+        &__button {
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            &:active::before,
+            &:active::after {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    @include mediaWidth(790px) {
+        td {
+            display: block;
+
+            &::before {
+                content: attr(data-cell) ": ";
+                font-size: 20px;
+                text-transform: capitalize;
+                font-weight: 900;
+            }
+
+            &:first-child {
+                padding-top: 1.5rem;
+            }
+
+            &:last-child {
+                padding-bottom: 1.5rem;
+            }
+        }
+
+        .table__body-column-btns {
+            > :not(:last-child) {
+                margin: 0 0 1rem 0;
+            }
+
+            &::before {
+                content: "";
+            }
+
+            button {
+                min-width: 100%;
+            }
+        }
+
+        thead {
+            display: none;
+        }
+    }
+}

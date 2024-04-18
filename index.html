@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./build/style.css" />
+        <title>Document</title>
+    </head>
+    <body class="body">
+        <div class="wrapper">
+            <div class="container">
+                <header class="header">
+                    <a class="header__label" href="#">
+                        <img src="./src/icons/registration.png" alt="label" />
+                        <span>DATABASE</span>
+                    </a>
+                    <button type="button" class="header__registr-button">
+                        <img src="./src/icons/userIcon.png" alt="add user" />
+                    </button>
+                </header>
+                <div class="page">
+                    <div class="page__form form-screen d-n">
+                        <form
+                            class="form-screen__form form"
+                            name="registration"
+                        >
+                            <h2 class="form__title">Registration</h2>
+                            <div class="form__body">
+                                <div class="form__column-one">
+                                    <div class="form__control">
+                                        <label for="name" class="form__label"
+                                            >Name:</label
+                                        >
+                                        <input
+                                            id="name"
+                                            class="form__input"
+                                            type="text"
+                                            placeholder="Enter your name"
+                                        />
+                                        <span class="form__span">error</span>
+                                    </div>
+                                    <div class="form__control">
+                                        <label for="surname" class="form__label"
+                                            >Surname:</label
+                                        >
+                                        <input
+                                            id="surname"
+                                            class="form__input"
+                                            type="text"
+                                            placeholder="Enter your surname"
+                                        />
+                                        <span class="form__span">error</span>
+                                    </div>
+                                    <div class="form__control">
+                                        <label for="age" class="form__label"
+                                            >Age:</label
+                                        >
+                                        <input
+                                            id="age"
+                                            class="form__input"
+                                            type="number"
+                                            placeholder="Enter your age"
+                                        />
+                                        <span class="form__span">error</span>
+                                    </div>
+                                    <div class="form__control">
+                                        <label for="phone" class="form__label"
+                                            >Phone:</label
+                                        >
+                                        <input
+                                            id="phone"
+                                            class="form__input"
+                                            type="text"
+                                            placeholder="+380"
+                                        />
+                                        <span class="form__span">error</span>
+                                    </div>
+                                </div>
+                                <div class="form__column-two">
+                                    <div class="form__control">
+                                        <label for="gmail" class="form__label"
+                                            >Gmail:</label
+                                        >
+                                        <input
+                                            id="gmail"
+                                            class="form__input"
+                                            type="text"
+                                            placeholder="example@gmail.com"
+                                        />
+                                        <span class="form__span">error</span>
+                                    </div>
+                                    <div class="form__control">
+                                        <label
+                                            for="password"
+                                            class="form__label"
+                                            >Password:</label
+                                        >
+                                        <input
+                                            id="password"
+                                            class="form__input"
+                                            type="text"
+                                            placeholder="a111111A"
+                                        />
+                                        <span class="form__span">error</span>
+                                    </div>
+                                    <div class="form__control">
+                                        <label
+                                            for="rePassword"
+                                            class="form__label"
+                                            >Again password:</label
+                                        >
+                                        <input
+                                            id="rePassword"
+                                            class="form__input"
+                                            type="text"
+                                            placeholder="a111111A"
+                                        />
+                                        <span class="form__span">error </span>
+                                    </div>
+                                    <div class="form__submit">
+                                        <span
+                                            class="form__span form__fields-check"
+                                            >All Fields must be fill !</span
+                                        >
+                                        <button
+                                            class="form__button"
+                                            type="submit"
+                                        >
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__turn-over">
+                                <button
+                                    class="form__ajast form__back form__ajast--active"
+                                    type="button"
+                                ></button>
+                                <button
+                                    type="button"
+                                    class="form__ajast form__skip"
+                                ></button>
+                            </div>
+                        </form>
+                    </div>
+                    <section class="page__table table-screen">
+                        <h2 class="table-screen__title">User Table</h2>
+                        <div class="table-screen__body">
+                            <table class="table-screen__table table">
+                                <thead class="table__header">
+                                    <tr class="table__header-row">
+                                        <th
+                                            data-cell="name"
+                                            class="table__header-column"
+                                        >
+                                            Name
+                                        </th>
+                                        <th
+                                            data-cell="age"
+                                            class="table__header-column"
+                                        >
+                                            Age
+                                        </th>
+                                        <th
+                                            data-cell="gmail"
+                                            class="table__header-column"
+                                        >
+                                            Gmail
+                                        </th>
+                                        <th
+                                            data-cell="phone"
+                                            class="table__header-column"
+                                        >
+                                            Phone
+                                        </th>
+                                        <th
+                                            data-cell="adjustment"
+                                            class="table__header-column"
+                                        ></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table__body"></tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <script src="./src/js/main.js"></script>
+    </body>
+</html>

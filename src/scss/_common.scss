@@ -1,0 +1,30 @@
+:root {
+    --main-bg: #d674ba;
+    --primary: white;
+    --danger: #ed0000;
+    --submit-red: #ff7675;
+    --submit-blue: #20caff;
+    --text-form: #1c2833;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    background: var(--main-bg);
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1046px;
+    margin: 0 auto;
+    padding: 0 15px;
+}

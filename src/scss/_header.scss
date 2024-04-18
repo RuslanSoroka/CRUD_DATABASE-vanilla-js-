@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    &__label {
+        display: flex;
+        align-items: center;
+        & img {
+            width: 50px;
+            height: 50px;
+        }
+
+        span {
+            letter-spacing: 4px;
+            font-size: 25px;
+            color: var(--primary);
+            margin: 0 0 0 5px;
+        }
+    }
+
+    &__registr-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        &:active {
+            transform: scale(0.9);
+        }
+        & img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}

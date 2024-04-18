@@ -1,0 +1,16 @@
+.form-screen {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px 0;
+
+    &__form {
+        width: 450px;
+    }
+
+    @include mediaWidth($break-point-xxl) {
+        &__form {
+            width: 100%;
+        }
+    }
+}
