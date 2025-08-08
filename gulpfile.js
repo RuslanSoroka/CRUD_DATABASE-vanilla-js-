@@ -1,12 +1,13 @@
-import gulp from "gulp";
-import gulpSass from "gulp-sass";
-import sass from "sass";
-import babelMin from "gulp-babel-minify";
-import concat from "gulp-concat";
-import browserSync from "browser-sync";
-import webp from "gulp-webp";
-import htmlMin from "gulp-htmlmin";
-import cssMin from "gulp-css-minify";
+const gulp = require("gulp");
+const gulpSass = require("gulp-sass");
+const sass = require("sass");
+const concat = require("gulp-concat");
+const browserSync = require("browser-sync");
+const webp = require("gulp-webp");
+const htmlMin = require("gulp-htmlmin");
+const cssMin = require("gulp-css-minify");
+const babel = require("gulp-babel");
+const uglify = require("gulp-uglify-es").default;
 
 const scssCompiler = gulpSass(sass);
 const live = browserSync.create();
@@ -24,9 +25,12 @@ async function sassCompilation() {
 }
 
 async function jsCompilation() {
-    gulp.src(PATH_FOLDER_JS)
-        .pipe(babelMin())
+    return gulp.src(PATH_FOLDER_JS)
+        .pipe(babel({
+            presets: ["@babel/preset-env"]
+        }))
         .pipe(concat("main.js"))
+        .pipe(uglify())
         .pipe(gulp.dest(BUILD_FOLDER));
 }
 
